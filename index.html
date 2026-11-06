@@ -55,7 +55,7 @@ Verify Last Modified Time
 <script>
   asyncfunction GetLastUpdatedTime(){
     const username = 'ad02873'
-    const repo = 'FY7006865' ;const url = https://api.github.com/repos/$(username}/$(repo}/commits;
+    const repo = 'FY7006865' ;const url = `https://api.github.com/repos/$(username}/$(repo}/commits`;
 try {
 const response = await fetch (url, {
 method: 'GET',
@@ -70,7 +70,7 @@ const commits = await response.json();
 if (commits && commits.length › 0) {
 const lastCommitDate = new Date(commits[0].commit.committer.date);
 // Displaying the time on load
-document.getElementById("last-updated'). innerText = `Last Modified Time: ${lastCommitDate.tolocalestring()}`;
+document.getElementById('last-updated'). innerText = `Last Modified Time: ${lastCommitDate.tolocalestring()}`;
 } else {
 document.getElementById('last-updated'). innerText = "No commits found in the repository.';}} catch (error) {
 console.error ('Error fetching the last updated time:'
